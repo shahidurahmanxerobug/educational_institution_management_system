@@ -6,13 +6,13 @@
 use backend\assets\AppAsset;
 use yii\helpers\Html;
 use yii\helpers\Url;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
-use common\widgets\Alert;
-
+use kartik\growl\Growl;
+use kartik\growl\GrowlAsset;
 
 AppAsset::register($this);
+GrowlAsset::register($this);
+date_default_timezone_set('Asia/Karachi');
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -125,11 +125,30 @@ AppAsset::register($this);
         ]) ?>
 		<div class="row">
 			<div class="col-md-12" >
-				<?php /* \odaialali\yii2toastr\ToastrFlash::widget([
-					'options' => [
-						'positionClass' => 'toast-top-right'
-					]
-				]); */?>
+                <?php foreach (Yii::$app->session->getAllFlashes() as $key => $message): ?>
+                    <?php
+                    $typesArray = ['success'=>'success','error'=>'danger','warning'=>'warning'];
+                    $titlesArray = ['success'=>'Success','error'=>'Error','warning'=>'Warning'];
+                    $iconsArray = ['success'=>"fa-check",'error'=>"fa-times",'warning'=>"fa-warning"];
+
+                    echo Growl::widget([
+                        'type' => $typesArray[$key],
+                        'title' => $titlesArray[$key],
+                        'icon' =>  "fa " .$iconsArray[$key],
+                        'body' => (!empty($message)) ? Html::encode($message) : 'Message Not Set!',
+                        'showSeparator' => true,
+                        'delay' => 1, //This delay is how long before the message shows
+                        'pluginOptions' => [
+                            'delay' => (!empty($message['duration'])) ? $message['duration'] : 5000, //This delay is how long the message shows for
+                            'placement' => [
+                                'from' => (!empty($message['positonY'])) ? $message['positonY'] : 'top',
+                                'align' => (!empty($message['positonX'])) ? $message['positonX'] : 'center',
+                            ],
+                            'z_index' => '10600'
+                        ]
+                    ]);
+                    ?>
+                <?php endforeach; ?>
 				<?= $content ?>
 			</div>
 		</div>
