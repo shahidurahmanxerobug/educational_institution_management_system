@@ -33,6 +33,12 @@ class EIMSComponent extends Component
         return $output;
     }
 
+    function startsWith($haystack, $needle)
+    {
+        $length = strlen($needle);
+        return (substr($haystack, 0, $length) === $needle);
+    }
+
     public function getLabel($class, $text)
     {
         return "<p class='$class'>$text</p>";

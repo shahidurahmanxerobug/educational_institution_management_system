@@ -8,12 +8,13 @@ $params = array_merge(
 
 return [
     'id' => 'app-backend',
+    'name' => 'Educational Institution Management System',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [
     	'gridview' =>  [
-	        'class' => '\kartik\grid\Module'
+	        'class' => '\kartik\grid\Module',
 	        // enter optional module parameters below - only if you need to  
 	        // use your own export download action or custom translation 
 	        // message source
@@ -22,8 +23,8 @@ return [
 			    'class' => 'yii\i18n\PhpMessageSource',
 			    'basePath' => '@kvgrid/messages',
 			    'forceTranslation' => true
-			];
-	    ]
+			],
+	    ],
     ],
     'components' => [
         'request' => [
