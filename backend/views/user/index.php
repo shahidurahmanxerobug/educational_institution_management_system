@@ -47,7 +47,7 @@ $this->params['breadcrumbs'][] = $this->title;
             GridView::widget([
                 'dataProvider' => $dataProvider,
                 'filterModel' => $searchModel,
-                'layout' => "{items}\n{summary}\n{pager}",
+                'layout'=>"{items}{pager}{summary}",
                 'showFooter' => true,
                 'showHeader' => true,
                 'showOnEmpty' => true,
@@ -75,6 +75,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         'value' => 'statusHTML',
                         'format' => 'html',
                         'filter' => \yii\helpers\ArrayHelper::map([['id' => 0, 'name' => 'Inactive'], ['id' => 1, 'name' => 'Active'], ['id' => 2, 'name' => 'Deleted']], 'id', 'name'),
+                        'contentOptions' => ['style'=>'padding:0px 0px 0px 30px;vertical-align: middle;'],
                     ],
                     [
                         'contentOptions' => ['class' => 'text-center'],
@@ -82,8 +83,9 @@ $this->params['breadcrumbs'][] = $this->title;
                         'value' => 'userTypeHTML',
                         'format' => 'html',
                         'filter' => \yii\helpers\ArrayHelper::map(\backend\models\UserType::find()->all(), 'id', 'name'),
+                        'contentOptions' => ['style'=>'padding:0px 0px 0px 30px;vertical-align: middle;'],
                     ],
-                    'created_at:datetime',
+                    //'created_at:datetime',
                     //'created_by',
                     //'updated_at',
                     //'updated_by',

@@ -9,7 +9,7 @@ use kartik\switchinput\SwitchInput;
 use kartik\widgets\FileInput;
 use kartik\widgets\DatePicker;
 use yii\widgets\MaskedInput;
-use dosamigos\ckeditor\CKEditor;
+use dosamigos\tinymce\TinyMce;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\User */
@@ -346,10 +346,22 @@ use dosamigos\ckeditor\CKEditor;
     <div class="clearfix"></div>
     <div class="form-group">
         <div class="col-sm-12">
-            <?= $form->field($userDetails, 'detail')->widget(CKEditor::className(), [
-                'options' => ['rows' => 6],
-                'preset' => 'basic'
-            ]) ?>
+            <?php $hintMessage = \Yii::t('app', 'Drag and drop images in the editor'); ?>
+            <?=
+            $form->field($userDetails, 'detail')->widget(TinyMce::className(), [
+                'options' => ['rows' => 20, "themes" => "modern"],
+                'clientOptions' => [
+                    'plugins' => [
+                        "advlist autolink lists link charmap print preview anchor",
+                        "searchreplace visualblocks code fullscreen",
+                        "insertdatetime media table contextmenu paste"
+                    ],
+                    'images_upload_url' => Url::to(['/message-pot/upload']),
+                    'paste_data_images' => true,
+                    'toolbar' => "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+                ]
+            ])->hint($hintMessage);
+            ?>
         </div>
     </div>
     <div class="clearfix"></div>
