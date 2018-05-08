@@ -397,11 +397,11 @@ use dosamigos\tinymce\TinyMce;
     <div class="clearfix"></div>
     <hr>
     <div class="form-group pull-right">
-        <?= Html::resetButton('<i class="fa fa-refresh"></i> ' . Yii::t('app', 'Reset'), ['class' => 'btn btn-warning btn-lg']) ?>
+        <?= Html::resetButton('<i class="fa fa-refresh"></i> ' . Yii::t('app', 'Reset'), ['class' => 'btn btn-warning']) ?>
         &nbsp;&nbsp;
-        <a href="<?= Url::to(['index']) ?>" class='btn btn-danger btn-lg'><i class="fa fa-undo"></i> <?= Yii::t('app', 'Cancel') ?></a>
+        <a href="<?= Url::to(['index']) ?>" class='btn btn-danger'><i class="fa fa-undo"></i> <?= Yii::t('app', 'Cancel') ?></a>
         &nbsp;&nbsp;
-        <?= Html::submitButton($model->isNewRecord ? '<i class="fa fa-save"></i> ' . Yii::t('app', 'Create') : '<i class="fa fa-save"></i> ' . Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-lg btn-success' : 'btn btn-lg btn-success']) ?>
+        <?= Html::submitButton($model->isNewRecord ? '<i class="fa fa-save"></i> ' . Yii::t('app', 'Create') : '<i class="fa fa-save"></i> ' . Yii::t('app', 'Update'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-success']) ?>
         <div class='clearfix'></div>
     </div>
 

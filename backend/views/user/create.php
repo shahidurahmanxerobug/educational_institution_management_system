@@ -12,7 +12,6 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="panel panel-default">
     <div class="panel-body">
-        <div class="user-create">
             <?=
             $this->render('_form', [
                 'model' => $model,
@@ -22,7 +21,5 @@ $this->params['breadcrumbs'][] = $this->title;
                 'studentModel' => $studentModel,
             ])
             ?>
-
-        </div>
     </div>
 </div>

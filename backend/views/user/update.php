@@ -13,17 +13,16 @@ $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Users'), 'url' => ['
 //$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
 ?>
-<div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="user-update">
-
-            <?=
-            $this->renderAjax('_form', [
-                'model' => $model,
-                'userDetails' => $userDetails,
-            ])
-            ?>
-
-        </div>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <?=
+        $this->render('_form', [
+            'model' => $model,
+            'userDetails' => $userDetails,
+            'teacherModel' => $teacherModel,
+            'parentsModel' => $parentsModel,
+            'studentModel' => $studentModel,
+        ])
+        ?>
     </div>
 </div>

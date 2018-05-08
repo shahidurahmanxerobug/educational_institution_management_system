@@ -12,13 +12,14 @@ use common\models\User;
  */
 class UserSearch extends User
 {
+    public $type;
     /**
      * @inheritdoc
      */
     public function rules()
     {
         return [
-            [['id', 'status', 'created_by', 'updated_by'], 'integer'],
+            [['id', 'status', 'created_by', 'updated_by', 'type'], 'integer'],
             [['username', 'auth_key', 'password_hash', 'password_reset_token', 'email', 'created_at', 'updated_at'], 'safe'],
         ];
     }
