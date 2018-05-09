@@ -6,6 +6,10 @@ $this->params['description'] = 'Dashboard Description';
 $this->params['breadcrumbs'][] = $this->title = 'Dashboard';
 
 ?>
-<p class="jumbotron">
-    Welcome to  <?= Yii::$app->name ?>
-</p>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <p class="jumbotron">
+            Welcome to <?= Yii::$app->name ?>
+        </p>
+    </div>
+</div>

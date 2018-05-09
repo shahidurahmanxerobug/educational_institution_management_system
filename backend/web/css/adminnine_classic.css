@@ -1083,17 +1083,19 @@ textarea.form-control {
 	margin: 22px;
 }
 .userprofile.social {
-	background: url(http://placehold.it/500x300) no-repeat top center;
-	background-size: 100%;
+	background: url(/img/5.jpg) no-repeat top center;
+	background-size: 100% 100%;
 	padding: 50px 0;
 	margin: 0
 }
 .userprofile.social .username {
-	color: #ffffff
+	color: #ffffff;
+	font-weight: bolder;
+	font-size: 2em;
 }
 .userprofile.social .username+p {
 	color: #ffffff;
-	opacity: 0.8
+	font-weight: bolder;
 }
 .postbtn {
 	position: absolute;

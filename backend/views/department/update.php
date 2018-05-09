@@ -13,14 +13,11 @@ $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Departments'), 'url'
 //$this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
 ?>
-<div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="department-update">
-
-            <?= $this->render('_form', [
-                'model' => $model,
-            ]) ?>
-
-        </div>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <?= $this->render('_form', [
+            'model' => $model,
+        ]) ?>
     </div>
 </div>
+

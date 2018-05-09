@@ -14,9 +14,8 @@ $this->params['description'] = 'Here you can manage blood groups use thoughout t
 $this->title = Yii::t('app', 'Blood Groups');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="blood-group-index">
+<div class="panel panel-default">
+    <div class="panel-body">
             <?php Pjax::begin(); ?>
             <?php // echo $this->render('_search', ['model' => $searchModel]);   ?>
             <p>
@@ -27,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
             GridView::widget([
                 'dataProvider' => $dataProvider,
                 'filterModel' => $searchModel,
-                'layout' => "{items}",
+                'layout'=>"{items}{pager}{summary}",
                 'showFooter' => true,
                 'showHeader' => true,
                 'showOnEmpty' => true,
@@ -46,7 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             'all' => function ($url, $model, $key) {
                                 return ButtonDropdown::widget([
                                             'encodeLabel' => false, // if you're going to use html on the button label
-                                            'label' => '<i class="ace-icon fa fa-wrench  bigger-110 icon-only"></i>',
+                                            'label' => '<i class="fa fa-wrench"></i>',
                                             'dropdown' => [
                                                 'encodeLabels' => false, // if you're going to use html on the items' labels
                                                 'items' => [
@@ -80,14 +79,9 @@ $this->params['breadcrumbs'][] = $this->title;
                         ],
                     ],
                 ],
-                'tableOptions' => ['class' => 'table table-striped table-bordered table-hover'],
-                'rowOptions' => function ($model, $key, $index, $grid) {
-                    $class = $index % 2 ? 'odd' : 'even';
-                    return array('key' => $key, 'index' => $index, 'class' => $class);
-                },
+                'tableOptions' => ['class' => 'table'],
             ]);
             ?>
             <?php Pjax::end(); ?>
         </div>
     </div>
-</div>

@@ -13,14 +13,12 @@ $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Address Types'), 'ur
 //$this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
 ?>
-<div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="address-type-update">
-            <?=
-            $this->renderAjax('_form', [
-                'model' => $model,
-            ])
-            ?>
-        </div>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <?=
+        $this->render('_form', [
+            'model' => $model,
+        ])
+        ?>
     </div>
 </div>

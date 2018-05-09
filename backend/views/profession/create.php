@@ -11,14 +11,12 @@ $this->title = Yii::t('app', 'Create Profession');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Professions'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="profession-create">
-            <?=
-            $this->renderAjax('_form', [
-                'model' => $model,
-            ])
-            ?>
-        </div>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <?=
+        $this->render('_form', [
+            'model' => $model,
+        ])
+        ?>
     </div>
 </div>

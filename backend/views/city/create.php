@@ -10,16 +10,13 @@ $this->title = Yii::t('app', 'Create City');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Cities'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12">
-        <div class="city-create">
+<div class="panel panel-default">
+    <div class="panel-body">
+        <?=
+        $this->render('_form', [
+            'model' => $model,
+        ])
+        ?>
 
-            <?=
-            $this->renderAjax('_form', [
-                'model' => $model,
-            ])
-            ?>
-
-        </div>
     </div>
 </div>
