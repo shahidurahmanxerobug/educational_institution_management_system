@@ -67,6 +67,10 @@ class UserSearch extends User
             return $dataProvider;
         }
 
+        if(!\Yii::$app->user->can('superadmin')) {
+            $query->andWhere(['<>','user.id', 1]);
+        }
+
         $query->andFilterWhere(['like', 'user_details.user_type_id', $this->type]);
 
         // grid filtering conditions
