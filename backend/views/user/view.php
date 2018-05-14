@@ -29,8 +29,9 @@ $this->params['breadcrumbs'][] = $this->title;
                         <i class="fa fa-camera"></i>
                     </a>
                 </div>
-                <h3 class="username"><?= \Yii::$app->util->fullName; ?></h3>
-                <p><?= \Yii::$app->util->roleName; ?></p>
+                <br>
+                <h3 class="username"><?= $model->fullName; ?></h3>
+                <p><?= $model->userDetail->userType->name; ?></p>
                 <div class="socials tex-center">
                     <a href="" class="btn btn-circle btn-primary ">
                         <i class="fa fa-facebook"></i>

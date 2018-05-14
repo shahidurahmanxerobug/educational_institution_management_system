@@ -104,9 +104,24 @@ date_default_timezone_set('Asia/Karachi');
 						</div>
 						<i class="caret"></i> </a>
 						<ul class="dropdown-menu dropdown-user">
-						  <li> <a href="socialprofile.html"><i class="fa fa-user fa-fw"></i> User Profile</a> </li>
-						  <li> <a href="javascript:void(0)"><i class="fa fa-gear fa-fw"></i> Settings</a> </li>
-						  <li> <a href="<?= Url::to(['/site/logout'])?>"><i class="fa fa-sign-out fa-fw"></i> Logout</a> </li>
+						  <li>
+                              <a href="<?= Url::to(['user/view', 'id' => Yii::$app->util->encrypt(Yii::$app->user->getId())]) ?>">
+                                  <i class="fa fa-user fa-fw"></i>
+                                  User Profile
+                              </a>
+                          </li>
+						  <li>
+                              <a href="<?= Url::to(['user/password', 'id' => Yii::$app->util->encrypt(Yii::$app->user->getId())])?>">
+                                  <i class="fa fa-lock fa-fw"></i>
+                                  Change Password
+                              </a>
+                          </li>
+						  <li>
+                              <a href="<?= Url::to(['/site/logout'])?>">
+                                  <i class="fa fa-sign-out fa-fw"></i>
+                                  Logout
+                              </a>
+                          </li>
 						</ul>
 					<!-- /.dropdown-user --> 
 					</li>

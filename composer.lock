@@ -2473,12 +2473,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "2d3d0c73db5c5f18d607418a2485bd11c2a10887"
+                "reference": "11f705cd4e39f3e1d18d8fe95ba8b7fd21021230"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/2d3d0c73db5c5f18d607418a2485bd11c2a10887",
-                "reference": "2d3d0c73db5c5f18d607418a2485bd11c2a10887",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/11f705cd4e39f3e1d18d8fe95ba8b7fd21021230",
+                "reference": "11f705cd4e39f3e1d18d8fe95ba8b7fd21021230",
                 "shasum": ""
             },
             "require": {
@@ -2565,7 +2565,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2018-05-08T13:39:55+00:00"
+            "time": "2018-05-12T22:14:39+00:00"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -2935,12 +2935,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-debug.git",
-                "reference": "7d7d1ecf4ecebb066afad5c14930da3643329fee"
+                "reference": "9634019f7f9590943427d0bafe6a40da3143ac43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/7d7d1ecf4ecebb066afad5c14930da3643329fee",
-                "reference": "7d7d1ecf4ecebb066afad5c14930da3643329fee",
+                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/9634019f7f9590943427d0bafe6a40da3143ac43",
+                "reference": "9634019f7f9590943427d0bafe6a40da3143ac43",
                 "shasum": ""
             },
             "require": {
@@ -2974,7 +2974,7 @@
                 "debugger",
                 "yii2"
             ],
-            "time": "2018-05-04T15:44:20+00:00"
+            "time": "2018-05-12T18:29:46+00:00"
         },
         {
             "name": "yiisoft/yii2-faker",
