@@ -50,7 +50,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 
-    <div class="col-lg-4 col-sm-12">
+    <div class="col-lg-6 col-sm-12">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h1 class="page-header small">Personal Details</h1>
@@ -59,162 +59,65 @@ $this->params['breadcrumbs'][] = $this->title;
                 <dl class="dl-horizontal">
                     <dt>Full Name</dt>
                     <dd><?= $model->fullName ?></dd>
+                    <dt>Gender</dt>
+                    <dd><?= $model->userDetail->gender->name ?></dd>
                     <dt>Email</dt>
                     <dd><?= $model->email ?></dd>
-                    <dt>Phone</dt>
+                    <dt>Mobile Number</dt>
                     <dd><?= $model->userDetail->mobile_number ?></dd>
                     <dt>C N I C</dt>
                     <dd><?= $model->userDetail->cnic ?></dd>
+                    <dt>Date of Birth</dt>
+                    <dd>
+                        <?php if (isset($model->userDetail->dob)) {
+                            $dateOB = date_create($model->userDetail->dob);
+                            echo date_format($dateOB, 'l, d F-Y');
+                        }
+                        ?>
+                    </dd>
+                    <dt>Marital Status</dt>
+                    <dd><?= $model->userDetail->maritalStatus->name ?></dd>
+                    <dt>Religion</dt>
+                    <dd><?= $model->userDetail->religion->name ?></dd>
+                    <dt>Blood Group</dt>
+                    <dd><?= $model->userDetail->bloodGroup->name ?></dd>
+                    <dt>Birth Place</dt>
+                    <dd><?= $model->userDetail->birth_place ?></dd>
+                    <dt>Nationality</dt>
+                    <dd><?= $model->userDetail->nationality ?></dd>
+                    <p class="border">
+                    <strong>Details:- </strong>
+                        <?= $model->userDetail->detail ?>
+                    </p>
                 </dl>
             </div>
             <div class="clearfix"></div>
         </div>
-
-
-
     </div>
-</div>
+    <div class="col-lg-6 col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h1 class="page-header small">Addresses</h1>
+            </div>
+            <div class="col-md-12">
+                <dl class="dl-horizontal">
+                    <dt></dt>
+                    <dd></dd>
+                </dl>
+            </div>
+        </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                    <span>
-                                        <?= isset($model->userDetail->cnic) ? $model->userDetail->cnic : ''; ?>
-                                    </span>
-                            </div>
-                        </div>
-                        <div class="profile-info-row">
-                            <div class="profile-info-name"> Date of Birth</div>
-                            <div class="profile-info-value">
-                                    <span>
-                                        <?php if (isset($model->userDetail->dob)) {
-                                            $dateOB = date_create($model->userDetail->dob);
-                                            echo date_format($dateOB, 'l, d F-Y');
-                                        }
-                                        ?>
-                                    </span>
-                            </div>
-                        </div>
-
-                        <div class="profile-info-row">
-                            <div class="profile-info-name"> Phone Number</div>
-                            <div class="profile-info-value">
-                                    <span>
-                                        <?= isset($model->userDetail->mobile_number) ? $model->userDetail->mobile_number : ''; ?>
-                                    </span>
-                            </div>
-                        </div>
-                        <div class="profile-info-row">
-                            <div class="profile-info-name"> Gender</div>
-                            <div class="profile-info-value">
-                                    <span>
-                                        <?= isset($model->userDetail->gender->name) ? $model->userDetail->gender->name : ''; ?>
-                                    </span>
-                            </div>
-                        </div>
-                        <div class="profile-info-row">
-                            <div class="profile-info-name"> Marital Status</div>
-                            <div class="profile-info-value">
-                                    <span>
-                                        <?= isset($model->userDetail->maritalStatus->name) ? $model->userDetail->maritalStatus->name : ''; ?>
-                                    </span>
-                            </div>
-                        </div>
-                        <div class="profile-info-row">
-                            <div class="profile-info-name"> Religion</div>
-                            <div class="profile-info-value">
-                                    <span>
-                                        <?= isset($model->userDetail->religion->name) ? $model->userDetail->religion->name : ''; ?>
-                                    </span>
-                            </div>
-                        </div>
-                        <div class="profile-info-row">
-                            <div class="profile-info-name"> Blood Group</div>
-                            <div class="profile-info-value">
-                                    <span>
-                                        <?= isset($model->userDetail->bloodGroup->name) ? $model->userDetail->bloodGroup->name : ''; ?>
-                                    </span>
-                            </div>
-                        </div>
-                        <div class="profile-info-row">
-                            <div class="profile-info-name"> Birth Place</div>
-                            <div class="profile-info-value">
-                                    <span>
-                                        <?= isset($model->userDetail->birth_place) ? $model->userDetail->birth_place : ''; ?>
-                                    </span>
-                            </div>
-                        </div>
-                        <div class="profile-info-row">
-                            <div class="profile-info-name"> Nationality</div>
-                            <div class="profile-info-value">
-                                    <span>
-                                        <?= isset($model->userDetail->nationality) ? $model->userDetail->nationality : ''; ?>
-                                    </span>
-                            </div>
-                        </div>
-                        <div class="profile-info-row">
-                            <div class="profile-info-name"> About Me</div>
-                            <div class="profile-info-value">
-                                <span><?= isset($model->userDetail->detail) ? $model->userDetail->detail : ''; ?> </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <br>
-                    <div class="widget-header widget-header-small">
-                        <h3 class="widget-title blue smaller">
-                            <i class="ace-icon fa fa-check-square-o orange"></i>
-                            Addresses
-                            <a class="btn btn-white btn-bold btn-xs pull-right" href="#">
-                                <i class="ace-icon fa fa-edit"></i> edit
-                            </a>
-                        </h3>
-                    </div>
-                    <div class="profile-user-info profile-user-info-striped">
-                        <div class="profile-info-row">
-                            <div class="profile-info-name"> Full Name</div>
-                            <div class="profile-info-value">
-                                    <span>
-                                        <?= $model->fullName ?>
-                                    </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                    <br>
-                    <div class="widget-header widget-header-small">
-                        <h3 class="widget-title blue smaller">
-                            <i class="ace-icon fa fa-check-square-o orange"></i>
-                            Documents
-                            <a class="btn btn-white btn-bold btn-xs pull-right" href="#">
-                                <i class="ace-icon fa fa-edit"></i> edit
-                            </a>
-                        </h3>
-                    </div>
-                    <div class="profile-user-info profile-user-info-striped">
-                        <div class="profile-info-row">
-                            <div class="profile-info-name"> Full Name</div>
-                            <div class="profile-info-value">
-                                    <span>
-                                        <?= $model->fullName ?>
-                                    </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h1 class="page-header small">Educational Information</h1>
+            </div>
+            <div class="col-md-12">
+                <dl class="dl-horizontal">
+                    <dt></dt>
+                    <dd></dd>
+                </dl>
             </div>
         </div>
     </div>
 </div>
-
+<div class="clearfix"></div>

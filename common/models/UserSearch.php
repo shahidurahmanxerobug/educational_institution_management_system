@@ -44,11 +44,20 @@ class UserSearch extends User
     {
         $query = User::find();
 
+        $query->joinWith(['userDetails']);
+
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
         ]);
+
+        $dataProvider->sort->attributes['userDetails'] = [
+            // The tables are the ones our relation are configured to
+            // in my case they are prefixed with "tbl_"
+            'asc' => ['user_details.user_type_id' => SORT_ASC],
+            'desc' => ['user_details.user_type_id' => SORT_DESC],
+        ];
 
         $this->load($params);
 
@@ -57,6 +66,8 @@ class UserSearch extends User
             // $query->where('0=1');
             return $dataProvider;
         }
+
+        $query->andFilterWhere(['like', 'user_details.user_type_id', $this->type]);
 
         // grid filtering conditions
         $query->andFilterWhere([

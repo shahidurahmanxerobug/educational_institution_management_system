@@ -2427,7 +2427,7 @@ dt {
 	text-align: left
 }
 .dl-horizontal dt {
-	width: 100px;
+	/*width: 100px;*/
 	color: #000000;
 	text-align: left
 }
